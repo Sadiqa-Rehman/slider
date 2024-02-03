@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+ 
+  <title>Slider Example</title>
+  <style>
+ body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+.swiper-container {
+  width: 80%;
+  margin: auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  padding: 50px;
+  background-color: #3498db;
+  color: #fff;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-size: 18px;
+  background-color: #007bff;
+}
+
+.swiper-button-prev::after {
+  content: url(preview.jpg);
+}
+
+.swiper-button-next::after{
+    content: url(next.webp);
+}
+image{
+    height: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    <!-- Add more slides as needed -->
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const mySwiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    loop: true,
+    autoplay: {
+      delay: 3000, // 3 seconds between slides
+      disableOnInteraction: false,
+    },
+  });
+});
+
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
